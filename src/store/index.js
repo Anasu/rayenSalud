@@ -13,7 +13,7 @@ export default new Vuex.Store({
   mutations: {
     RELOADDATA(state,data) {
       state.tutorials = data
-      console.log(data)
+      //console.log(data)
     }
   },
   actions: {
