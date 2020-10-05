@@ -7,14 +7,12 @@
       ></b-form-select>
     </div>
 
-    <b-card-group v-for="item in tutoriales" :key="item.id">
+    <b-card-group v-for="item in tutoriales" :key="item.id" deck>
     <b-card :title="item.nombre">
       <b-card-text>
-        {{item.profesor}}
-      </b-card-text>
-      <template v-slot:footer>
+        {{item.profesor}} | 
         <small class="text-muted">{{formatDate(item.fecha)}}</small>
-      </template>
+      </b-card-text>
     </b-card>
   </b-card-group>
   </div>
