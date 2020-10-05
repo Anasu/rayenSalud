@@ -13,6 +13,14 @@
     <div class="d-flex justify-content-center">
       <b-button variant="outline-danger" v-on:click="deleteAll()">Eliminar Todos</b-button>
     </div>
+
+    <b-icon 
+      icon="plus-circle-fill" 
+      scale="4" 
+      variant="info"
+      class="float-right margen-a-mano"
+      @click="addTutorial()"
+    ></b-icon>
   </div>
 </template>
 
@@ -43,6 +51,9 @@ export default {
         this.reloadData('tutorials')
       })
     },
+    addTutorial() {
+      this.$router.push({name: 'Editar'});
+    },
     ...mapActions([
       'reloadData',
       'eliminateData'
@@ -58,4 +69,7 @@ export default {
 $danger: #6200EE;
 @import "node_modules/bootstrap/scss/bootstrap";
 
+.margen-a-mano {
+  margin: 30px 10vw 0 0;
+}
 </style>
