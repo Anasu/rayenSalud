@@ -22,3 +22,13 @@ export async function apiDel(ruta) {
     console.log(error);
   }
 }
+
+export async function apiPost(ruta, obj) {
+  try {
+    const res = await axios.post(`${api}${ruta}`, obj)
+    return res
+  } 
+  catch (error) {
+    console.log(error);
+  }
+}
