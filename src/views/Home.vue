@@ -52,7 +52,7 @@ export default {
       })
     },
     addTutorial() {
-      this.$router.push({name: 'Editar'});
+      this.$router.push({name: 'Agregar'});
     },
     ...mapActions([
       'reloadData',
