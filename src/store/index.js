@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import {apiCall} from '@/config/apiConfig'
+import {apiCall, apiDel} from '@/config/apiConfig'
 
 Vue.use(Vuex)
 
@@ -14,7 +14,7 @@ export default new Vuex.Store({
     RELOADDATA(state,data) {
       state.tutorials = data
       //console.log(data)
-    }
+    }, 
   },
   actions: {
     reloadData(context,param) {
@@ -22,8 +22,12 @@ export default new Vuex.Store({
         //console.log(data)
         context.commit('RELOADDATA', data.data)
       })
+    },
+    eliminateData(context,param) {
+      return apiDel(param)
     }
   },
+    
   modules: {
   }
 })

@@ -9,6 +9,10 @@
     ></b-form-input>
 
     <list></list>
+
+    <div class="d-flex justify-content-center">
+      <b-button variant="outline-danger" v-on:click="deleteAll()">Eliminar Todos</b-button>
+    </div>
   </div>
 </template>
 
@@ -33,8 +37,15 @@ export default {
       // console.log('presionaste enter y enviaste algo!');
       this.text = '';
     },
+    deleteAll() {
+      console.log('purificar con fuego, muajaja!')
+      this.eliminateData('deletetutorials').then(()=>{
+        this.reloadData('tutorials')
+      })
+    },
     ...mapActions([
-      'reloadData'
+      'reloadData',
+      'eliminateData'
     ])
   },
   beforeMount() {
@@ -42,3 +53,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+$danger: #6200EE;
+@import "node_modules/bootstrap/scss/bootstrap";
+
+</style>
