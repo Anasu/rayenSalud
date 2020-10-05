@@ -2,6 +2,10 @@
 node_modules
 /dist
 
+#Archivos de instrucciones
+Desafío Rayen Salud.pdf
+public/api
+
 
 # local env files
 .env.local
